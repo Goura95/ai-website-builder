@@ -1,222 +1,342 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-indigo-500 selection:text-white font-sans">
+    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-indigo-500 selection:text-white font-sans antialiased">
       {/* Background Glow Effects */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <div className="absolute -top-40 -left-40 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl"></div>
         <div className="absolute top-1/3 -right-40 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 left-1/3 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10">
-        {/* Navigation */}
-        <header className="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-500/20">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <span className="font-bold text-xl tracking-tight text-white">
-                WebAI<span className="text-indigo-400">Builder</span>
-              </span>
+      {/* Navigation */}
+      <header className="relative z-10 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-500/25">
+              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
             </div>
-
-            <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-              <a href="#features" className="hover:text-white transition-colors">Features</a>
-              <a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a>
-              <a href="#templates" className="hover:text-white transition-colors">Templates</a>
-              <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
-            </nav>
-
-            <div className="flex items-center gap-4">
-              <a href="#login" className="hidden sm:inline-block text-sm font-medium text-slate-300 hover:text-white transition-colors">
-                Sign In
-              </a>
-              <a
-                href="#get-started"
-                className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg shadow-md shadow-indigo-600/30 transition-all hover:scale-[1.02]"
-              >
-                Get Started
-              </a>
-            </div>
+            <span className="font-bold text-xl tracking-tight text-white">
+              WebBuilder<span className="text-indigo-400">.ai</span>
+            </span>
           </div>
-        </header>
 
-        {/* Hero Section */}
-        <section className="pt-20 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+          <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+            <a href="#features" className="hover:text-white transition-colors">Features</a>
+            <a href="#how-it-works" className="hover:text-white transition-colors">How it works</a>
+            <a href="#tech-stack" className="hover:text-white transition-colors">Tech Stack</a>
+            <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
+          </nav>
+
+          <div className="flex items-center space-x-4">
+            <a
+              href="#login"
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors hidden sm:block"
+            >
+              Sign In
+            </a>
+            <a
+              href="#get-started"
+              className="px-4 py-2 text-sm font-medium rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition-all shadow-md shadow-indigo-600/30 hover:shadow-indigo-500/50"
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <main className="relative z-10">
+        <section className="pt-20 pb-16 md:pt-28 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs sm:text-sm font-medium mb-8">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-950/80 border border-indigo-500/30 text-indigo-300 text-xs sm:text-sm font-medium mb-8 backdrop-blur-sm shadow-inner">
             <span className="flex h-2 w-2 rounded-full bg-indigo-400 animate-pulse"></span>
-            Next-Generation Web Engineering
+            <span>⚡ Next-Gen AI Web Engineering Platform</span>
           </div>
 
-          {/* Main Heading */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-[1.1]">
-            Build AI Websites <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Faster</span>
+          {/* Heading */}
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-[1.15]">
+            Build AI Websites Faster
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Accelerate your workflow with AI-powered website development. Transform text prompts into production-ready Next.js & Tailwind CSS applications in seconds.
+          <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed">
+            Create, improve, test, and deploy production-ready websites with AI.
           </p>
 
-          {/* Hero CTAs */}
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          {/* CTA Buttons */}
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
             <a
-              href="#generate"
-              className="w-full sm:w-auto px-8 py-3.5 text-base font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 rounded-xl shadow-lg shadow-indigo-500/25 transition-all hover:scale-[1.02] flex items-center justify-center gap-2"
+              href="#get-started"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:opacity-95 text-white font-semibold shadow-xl shadow-indigo-500/25 transition-all text-center"
             >
               Start Building Free
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
             </a>
             <a
               href="#demo"
-              className="w-full sm:w-auto px-8 py-3.5 text-base font-semibold text-slate-300 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-800 rounded-xl transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-slate-600 text-slate-200 font-medium transition-all hover:bg-slate-800 text-center flex items-center justify-center gap-2"
             >
-              <svg className="w-5 h-5 text-indigo-400" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
+              <svg className="w-5 h-5 text-indigo-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
               </svg>
-              Watch 2-Min Demo
+              Watch Demo
             </a>
           </div>
 
+          {/* Feature Tech Badges */}
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400 font-medium">
+            <div className="flex items-center gap-2">
+              <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              Next.js & TypeScript
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              Tailwind CSS
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              GitHub & Vercel Integration
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              Automated Testing
+            </div>
+          </div>
+
           {/* Interactive Preview Mockup */}
-          <div className="mt-16 max-w-5xl mx-auto rounded-2xl border border-slate-800 bg-slate-900/50 p-2 sm:p-4 backdrop-blur-xl shadow-2xl shadow-indigo-950/50">
-            <div className="flex items-center justify-between px-4 py-2 border-b border-slate-800/80 mb-4">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+          <div className="mt-16 relative max-w-5xl mx-auto rounded-2xl border border-slate-800 bg-slate-900/90 shadow-2xl shadow-indigo-500/10 overflow-hidden">
+            {/* Top Bar */}
+            <div className="px-4 py-3 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 rounded-full bg-rose-500/80"></div>
+                <div className="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                <div className="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                <span className="ml-2 text-xs text-slate-500 font-mono">app/page.tsx — WebBuilder Studio</span>
               </div>
-              <div className="text-xs text-slate-400 font-mono bg-slate-950 px-3 py-1 rounded-md border border-slate-800/60 flex items-center gap-2">
-                <span className="text-emerald-400">●</span> prompt -&gt; website-preview
+              <div className="flex items-center space-x-2 text-xs text-slate-400 font-mono">
+                <span className="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  Ready
+                </span>
+                <span className="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                  Vercel Live
+                </span>
               </div>
-              <div className="w-12"></div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 text-left p-2">
-              {/* Prompt Box */}
-              <div className="md:col-span-5 bg-slate-950/80 p-5 rounded-xl border border-slate-800/80 flex flex-col justify-between">
-                <div>
-                  <div className="text-xs uppercase tracking-wider font-semibold text-indigo-400 mb-2">AI Prompt</div>
-                  <p className="text-sm text-slate-200 font-mono leading-relaxed bg-slate-900/90 p-3.5 rounded-lg border border-slate-800">
-                    &quot;Create a modern SaaS landing page for an AI analytics platform with interactive charts, pricing, and dark mode.&quot;
+            {/* Prompt Window & Code Split */}
+            <div className="p-6 text-left grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+              {/* Left Column: Prompting */}
+              <div className="space-y-4">
+                <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+                  <div className="flex items-center justify-between text-xs text-slate-400">
+                    <span className="font-semibold text-indigo-400 flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-indigo-500"></span>
+                      AI Prompt
+                    </span>
+                    <span>Just now</span>
+                  </div>
+                  <p className="text-sm text-slate-200 font-mono bg-slate-900/80 p-3 rounded-lg border border-slate-800">
+                    "Build a modern SaaS homepage with a clean hero section, automated workflow features, responsive design, and instant deployment."
                   </p>
                 </div>
 
-                <div className="mt-6 space-y-3">
-                  <div className="flex items-center justify-between text-xs text-slate-400">
-                    <span>Generating components...</span>
-                    <span className="text-indigo-400 font-semibold">100%</span>
-                  </div>
-                  <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
-                    <div className="bg-gradient-to-r from-indigo-500 to-purple-500 h-full w-full"></div>
-                  </div>
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    <span className="px-2 py-1 rounded text-[10px] font-mono bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">Next.js 14</span>
-                    <span className="px-2 py-1 rounded text-[10px] font-mono bg-purple-500/10 text-purple-300 border border-purple-500/20">Tailwind CSS</span>
-                    <span className="px-2 py-1 rounded text-[10px] font-mono bg-pink-500/10 text-pink-300 border border-pink-500/20">TypeScript</span>
+                <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800/80 space-y-2">
+                  <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Execution Pipeline</div>
+                  <div className="space-y-2 text-xs">
+                    <div className="flex items-center justify-between text-emerald-400">
+                      <span className="flex items-center gap-2">✓ Planning & Architecture</span>
+                      <span className="text-slate-500">Completed</span>
+                    </div>
+                    <div className="flex items-center justify-between text-emerald-400">
+                      <span className="flex items-center gap-2">✓ Generating React & Tailwind Code</span>
+                      <span className="text-slate-500">Completed</span>
+                    </div>
+                    <div className="flex items-center justify-between text-emerald-400">
+                      <span className="flex items-center gap-2">✓ Executing Automated Tests</span>
+                      <span className="text-slate-500">Passed</span>
+                    </div>
+                    <div className="flex items-center justify-between text-indigo-400">
+                      <span className="flex items-center gap-2">⚡ GitHub Commit & Vercel Sync</span>
+                      <span className="text-indigo-400 font-semibold">Deploying</span>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Live Preview Screen */}
-              <div className="md:col-span-7 bg-slate-950 rounded-xl border border-slate-800/80 overflow-hidden min-h-[260px] flex flex-col justify-center p-6 relative">
-                <div className="space-y-4">
-                  <div className="h-4 w-32 bg-slate-800 rounded"></div>
-                  <div className="h-8 w-3/4 bg-gradient-to-r from-slate-700 to-slate-800 rounded"></div>
-                  <div className="h-3 w-5/6 bg-slate-800/60 rounded"></div>
-                  <div className="grid grid-cols-3 gap-3 pt-4">
-                    <div className="h-20 bg-slate-900 border border-slate-800 rounded-lg p-3">
-                      <div className="h-2 w-10 bg-indigo-500/40 rounded mb-2"></div>
-                      <div className="h-4 w-12 bg-slate-700 rounded"></div>
-                    </div>
-                    <div className="h-20 bg-slate-900 border border-slate-800 rounded-lg p-3">
-                      <div className="h-2 w-10 bg-purple-500/40 rounded mb-2"></div>
-                      <div className="h-4 w-12 bg-slate-700 rounded"></div>
-                    </div>
-                    <div className="h-20 bg-slate-900 border border-slate-800 rounded-lg p-3">
-                      <div className="h-2 w-10 bg-pink-500/40 rounded mb-2"></div>
-                      <div className="h-4 w-12 bg-slate-700 rounded"></div>
-                    </div>
-                  </div>
+              {/* Right Column: Code / Preview Visual */}
+              <div className="p-5 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs overflow-x-auto text-slate-300 space-y-2">
+                <div className="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-500">
+                  <span>Generated Code Preview</span>
+                  <span className="text-indigo-400">TypeScript / JSX</span>
                 </div>
+                <p><span className="text-purple-400">export default function</span> <span className="text-blue-400">Hero</span>() &#123;</p>
+                <p className="pl-4"><span className="text-purple-400">return</span> (</p>
+                <p className="pl-8 text-slate-400">&lt;<span className="text-pink-400">div</span> <span className="text-indigo-300">className</span>=<span className="text-emerald-300">"hero-container"</span>&gt;</p>
+                <p className="pl-12 text-slate-400">&lt;<span className="text-pink-400">h1</span> <span className="text-indigo-300">className</span>=<span className="text-emerald-300">"text-6xl font-bold"</span>&gt;</p>
+                <p className="pl-16 text-emerald-300">Build AI Websites Faster</p>
+                <p className="pl-12 text-slate-400">&lt;/<span className="text-pink-400">h1</span>&gt;</p>
+                <p className="pl-12 text-slate-400">&lt;<span className="text-pink-400">p</span> <span className="text-indigo-300">className</span>=<span className="text-emerald-300">"text-xl text-slate-300"</span>&gt;</p>
+                <p className="pl-16 text-emerald-300">Create, improve, test, and deploy production-ready websites with AI.</p>
+                <p className="pl-12 text-slate-400">&lt;/<span className="text-pink-400">p</span>&gt;</p>
+                <p className="pl-8 text-slate-400">&lt;/<span className="text-pink-400">div</span>&gt;</p>
+                <p className="pl-4">);</p>
+                <p>&#125;</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Features Section */}
-        <section id="features" className="py-20 border-t border-slate-800/80 bg-slate-950/60">
+        <section id="features" className="py-20 border-t border-slate-900 bg-slate-950/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-xs uppercase tracking-widest text-indigo-400 font-semibold mb-3">Powerful Capabilities</h2>
+              <h2 className="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-3">Capabilities</h2>
               <p className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-                Everything you need for AI-powered website development
+                Everything you need to ship web apps at lightspeed
+              </p>
+              <p className="mt-4 text-slate-400 text-base">
+                From initial idea to published domain, our AI handles every step of modern web engineering.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-indigo-500/50 transition-all group">
-                <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              {/* Feature 1 */}
+              <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 transition-all hover:-translate-y-1">
+                <div className="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center mb-5">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">Instant Code Generation</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">Production React Code</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  Generate clean, semantic TypeScript, React components, and Tailwind CSS layouts tailored to your exact prompt requirements.
+                  Generates clean TypeScript, Next.js, and Tailwind CSS code standard with responsive design built-in.
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-purple-500/50 transition-all group">
-                <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              {/* Feature 2 */}
+              <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 transition-all hover:-translate-y-1">
+                <div className="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 flex items-center justify-center mb-5">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">Mobile-First & Responsive</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">Automated Verification</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  Every generated website is fully responsive, styled with fluid grid layouts that look pixel-perfect on screens of all sizes.
+                  Inspects and validates code before deployment to prevent runtime errors and visual glitches.
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-pink-500/50 transition-all group">
-                <div className="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 text-pink-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              {/* Feature 3 */}
+              <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 transition-all hover:-translate-y-1">
+                <div className="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 border border-pink-500/20 flex items-center justify-center mb-5">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">One-Click Deployment</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">GitHub & Vercel Sync</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  Seamlessly push directly to GitHub and publish automatically on Vercel with SEO optimizations built-in.
+                  Directly commits to your repository and triggers instant Vercel deployments with live URLs.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="border-t border-slate-800/80 py-12 bg-slate-950">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-2">
-              <div className="h-7 w-7 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-white text-xs">
-                AI
-              </div>
-              <span className="font-semibold text-white text-sm">WebAIBuilder</span>
+        {/* How It Works Section */}
+        <section id="how-it-works" className="py-20 border-t border-slate-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-xs font-semibold text-purple-400 uppercase tracking-widest mb-3">Workflow</h2>
+              <p className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                How It Works
+              </p>
+              <p className="mt-4 text-slate-400 text-base">
+                Four automated steps from concept to production-ready website.
+              </p>
             </div>
-            <p className="text-xs text-slate-500">
-              © {new Date().getFullYear()} WebAIBuilder. AI-Powered Website Development Platform. All rights reserved.
-            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="p-6 rounded-xl bg-slate-900/40 border border-slate-800 relative">
+                <div className="text-xs font-mono text-indigo-400 mb-2">STEP 01</div>
+                <h4 className="text-lg font-semibold text-white mb-2">Prompt & Plan</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">Describe your target audience, goals, and desired layout in natural language.</p>
+              </div>
+
+              <div className="p-6 rounded-xl bg-slate-900/40 border border-slate-800 relative">
+                <div className="text-xs font-mono text-indigo-400 mb-2">STEP 02</div>
+                <h4 className="text-lg font-semibold text-white mb-2">AI Generation</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">AI crafts responsive, accessible Next.js component files and Tailwind styling.</p>
+              </div>
+
+              <div className="p-6 rounded-xl bg-slate-900/40 border border-slate-800 relative">
+                <div className="text-xs font-mono text-indigo-400 mb-2">STEP 03</div>
+                <h4 className="text-lg font-semibold text-white mb-2">Test & Refine</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">Automatic inspection ensures accessibility, responsiveness, and zero syntax errors.</p>
+              </div>
+
+              <div className="p-6 rounded-xl bg-slate-900/40 border border-slate-800 relative">
+                <div className="text-xs font-mono text-indigo-400 mb-2">STEP 04</div>
+                <h4 className="text-lg font-semibold text-white mb-2">Deploy & Host</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">Code is pushed to GitHub and automatically deployed live on Vercel.</p>
+              </div>
+            </div>
           </div>
-        </footer>
-      </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 border-t border-slate-900">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="rounded-3xl bg-gradient-to-r from-indigo-900/40 via-purple-900/40 to-slate-900 p-8 sm:p-12 border border-indigo-500/20 text-center relative overflow-hidden">
+              <div className="relative z-10 max-w-2xl mx-auto">
+                <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                  Ready to Build AI Websites Faster?
+                </h2>
+                <p className="mt-4 text-slate-300 text-base">
+                  Create, improve, test, and deploy production-ready websites with AI today.
+                </p>
+                <div className="mt-8 flex justify-center">
+                  <a
+                    href="#get-started"
+                    className="px-8 py-3.5 rounded-xl bg-white text-slate-950 font-bold hover:bg-slate-100 transition-all shadow-xl shadow-indigo-500/10"
+                  >
+                    Get Started Free
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-900 bg-slate-950 text-slate-500 py-12 text-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center space-x-3">
+            <div className="w-7 h-7 rounded-lg bg-indigo-500 flex items-center justify-center text-white font-bold text-xs">
+              AI
+            </div>
+            <span className="font-semibold text-slate-300">WebBuilder.ai</span>
+          </div>
+          <p>© {new Date().getFullYear()} WebBuilder AI Platform. All rights reserved.</p>
+          <div className="flex space-x-6 text-xs text-slate-400">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">Docs</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
